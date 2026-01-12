@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moiz Janjua | Bestway Management Candidate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      --bw-blue: #004a99;
+      --bw-gold: #ffcb05;
+      --bw-dark: #002d5e;
+      --bw-light: #f8fafc;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bw-light);
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+    /* iOS 26 Glassmorphism Navigation */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(28px) saturate(190%) brightness(110%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%) brightness(110%);
+      border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px 0 rgba(0, 74, 153, 0.05);
+    }
+
+    .hero-gradient {
+      background: radial-gradient(circle at top right, rgba(255, 203, 5, 0.15), transparent),
+                  radial-gradient(circle at bottom left, rgba(0, 74, 153, 0.05), transparent);
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 74, 153, 0.1), 0 10px 10px -5px rgba(0, 74, 153, 0.04);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-pill {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 74, 153, 0.1);
+    }
+    .skill-pill:hover {
+      background: var(--bw-blue);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Expandable Detail Section */
+    .detail-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+      opacity: 0;
+    }
+    .detail-content.expanded {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 1rem;
+    }
+
+    .expand-btn i {
+      transition: transform 0.3s ease;
+    }
+    .expand-btn.active i {
+      transform: rotate(180deg);
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: var(--bw-blue); border-radius: 10px; }
+
+    .timeline-line {
+      width: 2px;
+      background: linear-gradient(to bottom, var(--bw-blue), var(--bw-gold), transparent);
+    }
+
+    .no-uppercase {
+      text-transform: none !important;
+    }
+  </style>
+</head>
+<body class="hero-gradient">
+
+  <!-- Navigation with iOS 26 Glass Effect -->
+  <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center transition-all duration-500" id="nav-content">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-[#004a99] rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-sm">M</div>
+        <span class="text-xl font-extrabold tracking-tight text-[#004a99] no-uppercase">Moiz<span class="text-[#ffcb05]"> Janjua</span></span>
+      </div>
+      <div class="hidden md:flex gap-8 font-semibold text-sm tracking-wide text-slate-700">
+        <a href="#experience" class="hover:text-[#004a99] transition-colors">Experience</a>
+        <a href="#skills" class="hover:text-[#004a99] transition-colors">Specialisms</a>
+        <a href="#education" class="hover:text-[#004a99] transition-colors">Education</a>
+      </div>
+      <a href="mailto:moizjanjua@icloud.com" class="bg-[#004a99] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[#002d5e] transition-all shadow-md active:scale-95">
+        Hire Me
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-40 pb-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-2 rounded-full text-[#004a99] text-xs font-bold uppercase tracking-widest mb-6 reveal">
+        <i class="fa-solid fa-store text-[#ffcb05]"></i>
+        Tailored for Mr Ummar Choudhary
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl font-extrabold text-[#002d5e] leading-tight mb-6 reveal">
+        Driving Operational <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#004a99] to-[#002d5e]">Excellence.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 reveal">
+        Strategic Management Professional with a background in high-volume retail logistics and B2B client success. Expert in scaling operations and leading diverse teams.
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-4 reveal">
+        <div class="flex items-center gap-2 bg-white px-5 py-3 rounded-2xl shadow-sm border border-slate-100">
+          <i class="fa-solid fa-location-dot text-[#ffcb05]"></i>
+          <span class="font-bold text-slate-700">Watford, UK</span>
+        </div>
+        <div class="flex items-center gap-2 bg-white px-5 py-3 rounded-2xl shadow-sm border border-slate-100">
+          <i class="fa-solid fa-phone text-[#ffcb05]"></i>
+          <span class="font-bold text-slate-700">+44 7853 204148</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Stats -->
+  <section class="py-12 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-white p-8 rounded-[2rem] border border-slate-100 text-center card-hover reveal">
+        <div class="text-4xl font-extrabold text-[#004a99] mb-2">17%</div>
+        <div class="text-xs uppercase font-bold tracking-widest text-slate-400">Dispatch Uplift</div>
+      </div>
+      <div class="bg-white p-8 rounded-[2rem] border border-slate-100 text-center card-hover reveal">
+        <div class="text-4xl font-extrabold text-[#004a99] mb-2">35+</div>
+        <div class="text-xs uppercase font-bold tracking-widest text-slate-400">Team Leadership</div>
+      </div>
+      <div class="bg-white p-8 rounded-[2rem] border border-slate-100 text-center card-hover reveal">
+        <div class="text-4xl font-extrabold text-[#004a99] mb-2">90+</div>
+        <div class="text-xs uppercase font-bold tracking-widest text-slate-400">Daily B2B Clients</div>
+      </div>
+      <div class="bg-white p-8 rounded-[2rem] border border-slate-100 text-center card-hover reveal">
+        <div class="text-4xl font-extrabold text-[#004a99] mb-2">7.8%</div>
+        <div class="text-xs uppercase font-bold tracking-widest text-slate-400">KPI Growth</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section id="experience" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center gap-4 mb-16 reveal">
+        <h2 class="text-4xl font-extrabold text-[#002d5e]">Career Roadmap</h2>
+        <div class="h-px flex-1 bg-slate-200"></div>
+      </div>
+
+      <div class="space-y-16 md:space-y-12 relative">
+        <div class="absolute left-6 md:left-1/2 top-0 bottom-0 timeline-line"></div>
+
+        <!-- Traction Fintech -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 reveal">
+          <div class="md:w-1/2 md:text-right order-2 md:order-1 ml-16 md:ml-0">
+            <span class="block md:hidden text-sm font-black text-[#004a99] mb-1">June 2025 — Nov 2025</span>
+            <h3 class="text-2xl font-bold text-[#002d5e]">Onboarding Officer (UK & EU)</h3>
+            <div class="text-[#004a99] font-bold mb-3 uppercase tracking-tighter">Traction Fintech | London</div>
+            <p class="text-slate-600 mb-2">Delivered high-quality operational support to 90+ daily B2B clients, managing account discrepancies and ensuring a seamless service delivery cycle.</p>
+            
+            <button onclick="toggleDetail('traction-detail', this)" class="expand-btn flex items-center gap-2 md:ml-auto text-sm font-bold text-[#004a99] hover:text-[#002d5e] transition-colors group">
+              <span>More Detail</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div id="traction-detail" class="detail-content text-left md:text-right">
+              <ul class="text-slate-500 space-y-2 text-sm leading-relaxed">
+                <li>Diagnosed complex data issues for merchant accounts, providing technical guidance to resolve onboarding bottlenecks.</li>
+                <li>Streamlined internal workflows to improve client response times, directly supporting business retention and satisfaction.</li>
+                <li>Acted as primary point of contact for UK/EU compliance, aligning technical data with regulatory requirements.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="absolute left-0 md:static w-12 h-12 bg-[#ffcb05] rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-[#002d5e] order-1 md:order-2">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <div class="md:w-1/2 order-3 hidden md:block">
+             <span class="text-sm font-black text-slate-300">2025 (Late)</span>
+          </div>
+        </div>
+
+        <!-- Gopuff -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 reveal">
+          <div class="md:w-1/2 order-1 md:order-1 text-slate-300 font-black md:text-right hidden md:block">
+             <span>2025 (Early)</span>
+          </div>
+          <div class="absolute left-0 md:static w-12 h-12 bg-[#004a99] rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white order-1 md:order-2">
+            <i class="fa-solid fa-moon"></i>
+          </div>
+          <div class="md:w-1/2 order-2 md:order-3 ml-16 md:ml-0">
+            <span class="block md:hidden text-sm font-black text-[#004a99] mb-1">Feb 2025 — June 2025</span>
+            <h3 class="text-2xl font-bold text-[#002d5e]">Night Operations Supervisor</h3>
+            <div class="text-[#004a99] font-bold mb-3 uppercase tracking-tighter">Gopuff | Hackney</div>
+            <p class="text-slate-600 mb-2">Led end-to-end night operations managing pick, pack, and dispatch. Optimized labor through real-time KPI dashboards.</p>
+            
+            <button onclick="toggleDetail('gopuff-detail', this)" class="expand-btn flex items-center gap-2 text-sm font-bold text-[#004a99] hover:text-[#002d5e] transition-colors group">
+              <span>More Detail</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div id="gopuff-detail" class="detail-content">
+              <ul class="text-slate-500 space-y-2 text-sm leading-relaxed">
+                <li>Supervised on-site teams using real-time KPIs to maintain 99.9% order accuracy and delivery SLAs.</li>
+                <li>Owned overnight issue resolution and safety compliance, acting as the senior escalation point for rider coordination.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amazon -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 reveal">
+          <div class="md:w-1/2 md:text-right order-2 md:order-1 ml-16 md:ml-0">
+            <span class="block md:hidden text-sm font-black text-[#004a99] mb-1">2023 — 2024</span>
+            <h3 class="text-2xl font-bold text-[#002d5e]">Area Manager (ECFT)</h3>
+            <div class="text-[#004a99] font-bold mb-3 uppercase tracking-tighter">Amazon | UK & Europe</div>
+            <p class="text-slate-600 mb-2">Led a team of 35 specialists in a high-pressure environment, improving productivity by 13% through clear coaching.</p>
+            <button onclick="toggleDetail('amazon-detail', this)" class="expand-btn flex items-center gap-2 md:ml-auto text-sm font-bold text-[#004a99] hover:text-[#002d5e] transition-colors group">
+              <span>More Detail</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="amazon-detail" class="detail-content text-left md:text-right">
+              <ul class="text-slate-500 space-y-2 text-sm leading-relaxed">
+                <li>Improved on-time shipment dispatch by 17% for 8 Fulfillment Centers in Europe.</li>
+                <li>Built team capability through structured development plans and regular performance feedback sessions.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="absolute left-0 md:static w-12 h-12 bg-[#ffcb05] rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-[#002d5e] order-1 md:order-2">
+            <i class="fa-brands fa-amazon"></i>
+          </div>
+          <div class="md:w-1/2 order-3 hidden md:block">
+             <span class="text-sm font-black text-slate-300">2023 — 2024</span>
+          </div>
+        </div>
+
+        <!-- Gorillas -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 reveal">
+          <div class="md:w-1/2 order-1 md:order-1 text-slate-300 font-black md:text-right hidden md:block">
+             <span>2021 — 2023</span>
+          </div>
+          <div class="absolute left-0 md:static w-12 h-12 bg-[#004a99] rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white order-1 md:order-2">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div class="md:w-1/2 order-2 md:order-3 ml-16 md:ml-0">
+            <span class="block md:hidden text-sm font-black text-[#004a99] mb-1">2021 — 2023</span>
+            <h3 class="text-2xl font-bold text-[#002d5e]">Operations Supervisor</h3>
+            <div class="text-[#004a99] font-bold mb-3 uppercase tracking-tighter">Gorillas | London</div>
+            <p class="text-slate-600 text-sm">Improved service-level KPIs by 7.86% and trained over 100 riders and associates in a high-demand dark store environment.</p>
+          </div>
+        </div>
+
+        <!-- SplitTrip (Entrepreneurial Experience) -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 reveal">
+          <div class="md:w-1/2 md:text-right order-2 md:order-1 ml-16 md:ml-0">
+            <span class="block md:hidden text-sm font-black text-[#004a99] mb-1">Oct 2021 — May 2025</span>
+            <h3 class="text-2xl font-bold text-[#002d5e]">Founder & UX Developer</h3>
+            <div class="text-[#004a99] font-bold mb-3 uppercase tracking-tighter">SplitTrip | London</div>
+            <p class="text-slate-600 mb-2">Led a cross-functional team of 7 developers to build a travel-tech platform from scratch, focusing on user-centric product strategy.</p>
+            
+            <button onclick="toggleDetail('split-detail', this)" class="expand-btn flex items-center gap-2 md:ml-auto text-sm font-bold text-[#004a99] hover:text-[#002d5e] transition-colors group">
+              <span>More Detail</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div id="split-detail" class="detail-content text-left md:text-right">
+              <ul class="text-slate-500 space-y-2 text-sm leading-relaxed">
+                <li>Defined operational workflows and high-quality standards for the development lifecycle.</li>
+                <li>Aligned product decisions with market needs, demonstrating strong stakeholder management and strategic vision.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="absolute left-0 md:static w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white order-1 md:order-2">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <div class="md:w-1/2 order-3 hidden md:block">
+             <span class="text-sm font-black text-slate-300">Entrepreneurship</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Specialisms -->
+  <section id="skills" class="py-24 bg-[#002d5e] text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl font-extrabold mb-4 tracking-tight no-uppercase">Management Toolkit</h2>
+        <p class="text-blue-200">A blend of operational rigor and human-centric leadership.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="reveal">
+          <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-chart-line text-[#ffcb05] text-2xl"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-4">Performance Ops</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">Process Improvement</span>
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">Labor Optimization</span>
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">Inventory Control</span>
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">Lean Six Sigma</span>
+          </div>
+        </div>
+
+        <div class="reveal" style="transition-delay: 200ms;">
+          <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-users-gear text-[#ffcb05] text-2xl"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-4">Leadership</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">SLII Leadership</span>
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">Team Coaching</span>
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">Conflict Resolution</span>
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">Customer Support</span>
+          </div>
+        </div>
+
+        <div class="reveal" style="transition-delay: 400ms;">
+          <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-microchip text-[#ffcb05] text-2xl"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-4">Technical Skills</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">Advanced Excel</span>
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">Jira/Asana</span>
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">UX/UI Design</span>
+            <span class="skill-pill bg-white/5 px-4 py-2 rounded-xl text-sm font-medium">B2B Strategy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Certs -->
+  <section id="education" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-4 mb-16 reveal">
+        <h2 class="text-4xl font-extrabold text-[#002d5e]">Education</h2>
+        <div class="h-px flex-1 bg-slate-200"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 card-hover reveal">
+          <div class="text-xs font-black text-[#004a99] uppercase tracking-widest mb-2">Coventry University</div>
+          <h4 class="text-xl font-extrabold text-[#002d5e]">M.Sc. International Business Management</h4>
+        </div>
+        <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 card-hover reveal" style="transition-delay: 100ms;">
+          <div class="text-xs font-black text-[#004a99] uppercase tracking-widest mb-2">University of Central Punjab</div>
+          <h4 class="text-xl font-extrabold text-[#002d5e]">M.Com Accounting and Finance</h4>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-blue-50/50 p-6 rounded-3xl border border-blue-100 flex items-center gap-4 reveal">
+          <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm">
+            <i class="fa-brands fa-google text-blue-500"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-slate-400">Google</div>
+            <div class="font-bold text-sm">UX Design Professional</div>
+          </div>
+        </div>
+        <div class="bg-blue-50/50 p-6 rounded-3xl border border-blue-100 flex items-center gap-4 reveal">
+          <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm">
+            <i class="fa-solid fa-vial-circle-check text-green-500"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-slate-400">Alison</div>
+            <div class="font-bold text-sm">Lean Six Sigma Green Belt</div>
+          </div>
+        </div>
+        <div class="bg-blue-50/50 p-6 rounded-3xl border border-blue-100 flex items-center gap-4 reveal">
+          <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm">
+            <i class="fa-brands fa-amazon text-orange-500"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-slate-400">Amazon</div>
+            <div class="font-bold text-sm">Situational Leadership 2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white py-16 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8 italic">"Scale with efficiency. Lead with empathy."</h2>
+      <div class="flex justify-center gap-6 mb-12">
+        <a href="https://linkedin.com/in/moizjanjua/" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ffcb05] hover:text-[#002d5e] transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:moizjanjua@icloud.com" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ffcb05] hover:text-[#002d5e] transition-all"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <div class="text-slate-500 text-xs font-bold uppercase tracking-widest">
+        &copy; 2026 Abdul Moiz Janjua. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Handle Detail Toggles
+    function toggleDetail(id, btn) {
+      const content = document.getElementById(id);
+      content.classList.toggle('expanded');
+      btn.classList.toggle('active');
+    }
+
+    window.addEventListener('scroll', () => {
+      const navContent = document.getElementById('nav-content');
+      if (window.scrollY > 20) {
+        navContent.classList.replace('h-20', 'h-16');
+      } else {
+        navContent.classList.replace('h-16', 'h-20');
+      }
+    });
+  </script>
+</body>
+</html>
